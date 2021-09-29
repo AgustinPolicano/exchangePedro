@@ -14,9 +14,11 @@ export class HomeComponent implements OnInit {
   usdInitial: any
   form!: FormGroup;
   prueba: any;
+  changeLado!: boolean;
   selected = 'USD';
   envioSelected = 'Payoneer'
   constructor(private service: LogicService, private fb: FormBuilder) {
+    this.changeLado = false;
   }
 
 
@@ -24,9 +26,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.service.getUsd().subscribe(
       usd => {
-        console.log(usd)
-        this.prueba = usd;
-        this.usdInitial = usd;  
+        this.prueba = usd[1].casa.compra.toString().replace(',', '.');
+        this.usdInitial = usd[1].casa.compra;  
         this.patchForm();
       }
     );
@@ -37,7 +38,7 @@ export class HomeComponent implements OnInit {
     this.form = this.fb.group({
       usd: '',
       recambio: '',
-      comision: ''
+      comision: 5.5
     });
   }
 
@@ -45,12 +46,17 @@ export class HomeComponent implements OnInit {
   patchForm() {
     this.form.setValue({
       usd: 1,
-      recambio: this.prueba.compra,
-      comision: ''
+      recambio: this.prueba,
+
     });
   }
 
   setFilter(){
     this.form.reset()
+  }
+
+   handleChange(comision: any) {
+    if (comision.value < 0) comision.value = 0;
+    if (comision.value > 100) comision.value = 100;
   }
 }

@@ -35,5 +35,14 @@ $exchangePedro-theme: mat.define-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html, body { 
+background-color: #767ff0;
+}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-form-field-appearance-outline .mat-form-field-wrapper {
+  margin: 0px !important;
+}
+.mat-form-field-wrapper {
+  padding-bottom: 0px !important;
+}

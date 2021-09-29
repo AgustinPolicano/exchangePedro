@@ -1,5 +1,7 @@
 export interface DolarModel {
-        compra: number
+    casa: {
+        compra: number,
+    }
 }
 
 export interface hola {

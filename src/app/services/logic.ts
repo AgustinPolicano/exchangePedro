@@ -8,7 +8,7 @@ import { DolarModel, hola } from '../model/model';
 })
 
 export class LogicService {
-  dolarApi = 'https://api-dolar-argentina.herokuapp.com/api/dolarblue'
+  dolarApi = 'https://www.dolarsi.com/api/api.php?type=valoresprincipales'
   constructor(private http: HttpClient) {
 
   }

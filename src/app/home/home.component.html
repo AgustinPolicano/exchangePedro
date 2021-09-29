@@ -1,35 +1,75 @@
+<app-navbar></app-navbar>
 <form [formGroup]="form">
+    <div>
+        <div class="flex-select">
+            <div>
+                <mat-form-field appearance="outline" class="select-1">
+                    <mat-select [(value)]="envioSelected" (selectionChange)="setFilter()">
+                        <mat-option value="Payoneer">Payooner</mat-option>
+                        <mat-option value="Paypal">Paypal</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="select-2">
+                <mat-form-field appearance="outline" class="select-2">
+                    <mat-select [(value)]="selected" (selectionChange)="setFilter()">
+                        <mat-option value="ARS">ARS</mat-option>
+                        <mat-option value="USD">USD</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="flex-input">
+            <div *ngIf="envioSelected === 'Paypal'">
+                <input class="input-paypal" formControlName="usd" type="number" [ngModel]="form.get('usd')?.value">
+            </div>
+            <div *ngIf="envioSelected === 'Payoneer'">
+                <input class="input-payooner" formControlName="usd" type="number" [ngModel]="form.get('usd')?.value">
+            </div>
+            <div class="">
+                <mat-icon class="icon-flecha">east</mat-icon>
+            </div>
+            <div *ngIf="envioSelected === 'Payoneer'">
+                <div *ngIf="selected === 'USD' ">
+                    <input class="input-usdt" formControlName="usd" type="number" readonly="readonly"
+                        [value]="(form.get('usd')?.value) * (1-form.get('comision')?.value / 100)" name="data">
+                </div>
+                <div *ngIf="selected === 'ARS'">
+                    <input class="input-ars" formControlName="recambio" type="number" readonly="readonly"
+                        (ngModel)="form.get('recambio')?.value"
+                        [value]="(form.get('usd')?.value*this.prueba) * (1 -form.get('comision')?.value / 100)"
+                        name="data">
+                </div>
+            </div>
+            <div *ngIf="envioSelected === 'Paypal'">
+                <div *ngIf="selected === 'USD' ">
+                    <input class="input-usdt" formControlName="usd" type="number" readonly="readonly"
+                        [value]="-1+(form.get('usd')?.value) * (1-form.get('comision')?.value / 100)">
+                </div>
+                <div *ngIf="selected === 'ARS'">
+                    <input class="input-ars" formControlName="recambio" type="number" readonly="readonly"
+                        (ngModel)="form.get('recambio')?.value"
+                        [value]="-this.prueba+(form.get('usd')?.value*this.prueba) * (1 -form.get('comision')?.value / 100)"
+                        name="data">
+                </div>
+            </div>
+        </div>
+        <div *ngIf="selected === 'USD' && envioSelected === 'Payoneer'" class="comision-style">
+            <span>La comision es de </span>
+            <input formControlName="comision" type="number" ngModel="5.5" class="comision"> %
+        </div>
+        <div *ngIf="selected === 'ARS' && envioSelected === 'Payoneer'" class="comision-style">
+            <span>La comision es de </span>
+            <input formControlName="comision" type="number" ngModel="5.5" class="comision"> %
+        </div>
 
-    <input formControlName="usd" type="number" [ngModel]="form.get('usd')?.value">
-    <mat-form-field appearance="fill">
-        <mat-label>Seleccione su procesador de pago</mat-label>
-        <mat-select [(value)]="envioSelected" (selectionChange)="setFilter()">
-            <mat-option value="Payoneer">Payooner</mat-option>
-            <mat-option value="Paypal">Paypal</mat-option>
-        </mat-select>
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>Seleccione su divisa</mat-label>
-        <mat-select [(value)]="selected" (selectionChange)="setFilter()">
-            <mat-option value="ARS">ARS</mat-option>
-            <mat-option value="USD">USD</mat-option>
-        </mat-select>
-    </mat-form-field>
-        <div *ngIf="selected === 'ARS' && envioSelected === 'Paypal'"> <input formControlName="recambio" type="number" readonly="readonly"
-            (ngModel)="form.get('recambio')?.value" [value]="(-1*this.usdInitial.compra + form.get('usd')?.value*this.prueba.compra) * (1 -form.get('comision')?.value / 100)" 
-            name="data">
-    </div>  
-
-
-    <div *ngIf="selected === 'USD'"> <input formControlName="usd" type="number" readonly="readonly"
-            [value]="(-1+form.get('usd')?.value) * (1-form.get('comision')?.value / 100)" name="data">
+        <div *ngIf="selected === 'USD'  && envioSelected === 'Paypal' " class="comision-style">
+            <span>La comision es de </span>
+            <input formControlName="comision" type="number" ngModel="14.5" class="comision"> % + 1 USD
+        </div>
+        <div *ngIf="selected === 'ARS' && envioSelected === 'Paypal' " class="comision-style">
+            <span>La comision es de </span>
+            <input formControlName="comision" type="number" ngModel="14.5" class="comision"> % + 1 USD
+        </div>
     </div>
-
-
-    <div *ngIf="envioSelected === 'Payoneer'">
-        <input placeholder="Seleccione su comision" formControlName="comision" type="number" ngModel="5.5">%
-    </div>
-
-<p>{{this.usdInitial.compra}}</p>
-
 </form>
