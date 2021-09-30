@@ -1,0 +1,34 @@
+.footer-bg{
+    margin-top: 50px;
+    width:100%;
+    height:80px;   /* Height of the footer */
+    background:white;
+    border-radius: 15px;
+    box-shadow: rgba(240, 46, 170, 0.4) 0px -5px, rgba(240, 46, 170, 0.3) 0px -15px,
+}
+
+.flex-telegram{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 10px;
+}
+.texto-footer{
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+}
+.telegram-logo{
+    font-size: 40px;
+    margin-top: 5px;
+  
+}
+
+@media only screen and (min-width: 0px) and (max-width: 480px) {
+    .footer-bg{
+        bottom:-550px;
+    }
+
+
+}

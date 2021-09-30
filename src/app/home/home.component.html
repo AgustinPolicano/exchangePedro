@@ -1,6 +1,18 @@
 <app-navbar></app-navbar>
 <form [formGroup]="form">
-    <div>
+
+    <div class="bg-dolar">
+        <div class="texto-dolarhoy">Dolar Hoy</div>
+        <div class="flex-dolar">
+            <div class="texto-dolarhoy" style="text-decoration: #767ff0 underline ;">Compra</div>
+            <div class="texto-dolarhoy" style="text-decoration: #767ff0 underline ;">Venta</div>
+            <div class="break"></div>
+            <div class="texto-dolarcompra">{{this.prueba}}</div>
+            <div class="texto-dolarventa">{{this.pruebaVenta}}</div> 
+        </div>
+    </div>
+
+    <div class="calc1-pos"> 
         <div class="flex-select">
             <div>
                 <mat-form-field appearance="outline" class="select-1">
@@ -21,10 +33,10 @@
         </div>
         <div class="flex-input">
             <div *ngIf="envioSelected === 'Paypal'">
-                <input class="input-paypal" formControlName="usd" type="number" [ngModel]="form.get('usd')?.value">
+                <input class="input-paypal" formControlName="usd" type="number">
             </div>
             <div *ngIf="envioSelected === 'Payoneer'">
-                <input class="input-payooner" formControlName="usd" type="number" [ngModel]="form.get('usd')?.value">
+                <input class="input-payooner" formControlName="usd" type="number">
             </div>
             <div class="">
                 <mat-icon class="icon-flecha">east</mat-icon>
@@ -72,4 +84,184 @@
             <input formControlName="comision" type="number" ngModel="14.5" class="comision"> % + 1 USD
         </div>
     </div>
+
+
+    <div *ngIf="changeLado === false">
+        <div class="flex-select" >
+            <div>
+                <mat-form-field appearance="outline" class="select-1">
+                    <mat-select [(value)]="envioSelected2" (selectionChange)="setFilter()">
+                        <mat-option value="USDT">USDT</mat-option>
+                        <mat-option value="Wise">Wise</mat-option>
+                        <mat-option value="Skrill">Skrill</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="select-2">
+                <mat-form-field appearance="outline" class="select-2">
+                    <mat-select [(value)]="selected2" (selectionChange)="setFilter()">
+                        <mat-option value="ARS2">ARS</mat-option>
+                        <mat-option value="USD2">USDT</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="flex-input">
+            <div *ngIf="envioSelected2 === 'USDT'">
+                <input class="input-usdt1" formControlName="usd2" type="number" [ngModel]="form.get('usd2')?.value">
+            </div>
+            <div *ngIf="envioSelected2 === 'Wise'">
+                <input class="input-wise" formControlName="usd2" type="number" [ngModel]="form.get('usd2')?.value">
+            </div>
+            <div *ngIf="envioSelected2 === 'Skrill'">
+                <input class="input-skrill" formControlName="usd2" type="number" [ngModel]="form.get('usd2')?.value">
+            </div>
+            <div class="" (click)="changeLado = true">
+                <mat-icon class="icon-flecha" style="cursor: pointer;">east</mat-icon>
+                <mat-icon class="icon-flechaCelu" style="cursor: pointer;">south</mat-icon>
+            </div>
+            <div>
+                <div *ngIf="selected2 === 'USD2' ">
+                    <input class="input-usdt" formControlName="usd2" type="number" readonly="readonly"
+                        [value]="(form.get('usd2')?.value) * (1-form.get('comision1')?.value / 100)" name="data">
+                </div>
+                <div *ngIf="selected2 === 'ARS2'">
+                    <input class="input-ars" formControlName="recambio2" type="number" readonly="readonly"
+                        (ngModel)="form.get('recambio2')?.value"
+                        [value]="(form.get('usd2')?.value*this.prueba) * (1 -form.get('comision1')?.value / 100)"
+                        name="data">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div *ngIf="changeLado === true">
+        <div class="flex-select" >
+            <div>
+                <mat-form-field appearance="outline" class="select-1">
+                    <mat-select [(value)]="envioSelected3" (selectionChange)="setFilter()">
+                        <mat-option value="USDT">USDT</mat-option>
+                        <mat-option value="ARS">ARS</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="select-2">
+                <mat-form-field appearance="outline" class="select-2">
+                    <mat-select [(value)]="selected3" (selectionChange)="setFilter()">
+                        <mat-option value="Wise">Wise</mat-option>
+                        <mat-option value="Skrill">Skrill</mat-option>
+                        <mat-option value="USDT">USDT</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="flex-input">
+            <div *ngIf="envioSelected3 === 'USDT'">
+                <input class="input-usdt1" formControlName="usd2" type="number" >
+            </div>
+            <div *ngIf="envioSelected3 === 'ARS'">
+                <input class="input-ars1" formControlName="recambio2" type="number" [ngModel]="form.get('recambio2')?.value">
+            </div>
+            <div class="" (click)="changeLado = false">
+                <mat-icon class="icon-flecha" style="cursor: pointer;">west</mat-icon>
+                <mat-icon class="icon-flechaCelu" style="cursor: pointer;">south</mat-icon>
+            </div>
+            <div>
+                <div *ngIf="selected3 === 'Wise' ">
+                    <div *ngIf="envioSelected3 === 'ARS'">
+                        <input class="input-wise1" type="number" readonly="readonly"
+                        [value]="(form.get('recambio2')?.value / this.pruebaVenta) * (1-form.get('comision1')?.value / 100)" name="data">
+                    </div>
+                    <div *ngIf="envioSelected3 === 'USDT'">
+                        <input class="input-wise1" formControlName="usd2" type="number" readonly="readonly" ngModel="100"
+                        [value]="(form.get('usd2')?.value) * (1-form.get('comision1')?.value / 100)" name="data">
+                    </div>
+                </div>
+                <div *ngIf="selected3 === 'Skrill'">
+                    <div *ngIf="envioSelected3 === 'ARS'">
+                        <input class="input-skrill1" type="number" readonly="readonly"
+                        [value]="(form.get('recambio2')?.value / this.pruebaVenta) * (1-form.get('comision1')?.value / 100)" name="data">
+                    </div>
+                    <div *ngIf="envioSelected3 === 'USDT'">
+                        <input class="input-skrill1" type="number" readonly="readonly"
+                        (ngModel)="form.get('recambio2')?.value"
+                        [value]="(form.get('usd2')?.value) * (1-form.get('comision1')?.value / 100)"
+                        name="data">
+                    </div>
+                </div>
+                <div *ngIf="selected3 === 'USDT'">
+                    <div *ngIf="envioSelected3 === 'ARS'">
+                        <input class="input-usdt" type="number" readonly="readonly"
+                        [value]="(form.get('recambio2')?.value / this.pruebaVenta) * (1-form.get('comision1')?.value / 100)" name="data">
+                    </div>
+                    <div *ngIf="envioSelected3 === 'USDT'">
+                        <input class="input-usdt" formControlName="recambio2" type="number" readonly="readonly"
+                        (ngModel)="form.get('recambio2')?.value"
+                        [value]="(form.get('usd2')?.value) * (1-form.get('comision1')?.value / 100)"
+                        name="data">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="changeLado === false">
+        <div *ngIf="selected2 === 'USD2' && envioSelected2 === 'USDT'" class="comision-style">
+            <span>La comision es de </span>
+            <input formControlName="comision1" type="number" ngModel="1" class="comision"> %
+        </div>
+        <div *ngIf="selected2 === 'ARS2' && envioSelected2 === 'USDT'" class="comision-style">
+            <span>La comision es de </span>
+            <input formControlName="comision1" type="number" ngModel="1" class="comision"> %
+        </div>
+        <div *ngIf="selected2 === 'USD2' && envioSelected2 === 'Wise'" class="comision-style">
+            <span>La comision es de </span>
+            <input formControlName="comision1" type="number" ngModel="3.5" class="comision"> %
+        </div>
+        <div *ngIf="selected2 === 'ARS2' && envioSelected2 === 'Wise'" class="comision-style">
+            <span>La comision es de </span>
+            <input formControlName="comision1" type="number" ngModel="3.5" class="comision"> %
+        </div>
+        <div *ngIf="selected2 === 'USD2' && envioSelected2 === 'Skrill'" class="comision-style">
+            <span>La comision es de </span>
+            <input formControlName="comision1" type="number" ngModel="5" class="comision"> %
+        </div>
+        <div *ngIf="selected2 === 'ARS2' && envioSelected2 === 'Skrill'" class="comision-style">
+            <span>La comision es de </span>
+            <input formControlName="comision1" type="number" ngModel="5" class="comision"> %
+        </div>
+    </div>
+
+    <div *ngIf="changeLado === true">
+        <div *ngIf="selected3 === 'Wise' && envioSelected3 === 'USDT'" class="comision-style">
+            <span>La comision es de </span>
+            <input formControlName="comision1" type="number" ngModel="1.5" class="comision"> %
+        </div>
+        <div *ngIf="selected3 === 'Wise' && envioSelected3 === 'ARS'" class="comision-style">
+            <span>La comision es de </span>
+            <input formControlName="comision1" type="number" ngModel="1.5" class="comision"> %
+        </div>
+        <div *ngIf="selected3 === 'Skrill' && envioSelected3 === 'USDT'" class="comision-style">
+            <span>La comision es de </span>
+            <input formControlName="comision1" type="number" ngModel="1.5" class="comision"> %
+        </div>
+        <div *ngIf="selected3 === 'Skrill' && envioSelected3 === 'ARS'" class="comision-style">
+            <span>La comision es de </span>
+            <input formControlName="comision1" type="number" ngModel="1.5" class="comision"> %
+        </div>
+        <div *ngIf="selected3 === 'USDT' && envioSelected3 === 'ARS'" class="comision-style">
+            <span>La comision es de </span>
+            <input formControlName="comision1" type="number" ngModel="2.5" class="comision"> %
+        </div>
+        <div *ngIf="selected3 === 'USDT' && envioSelected3 === 'USDT'" class="comision-style">
+            <span>La comision es de </span>
+            <input formControlName="comision1" type="number" ngModel="2.5" class="comision"> %
+        </div>
+    </div>
+
+
+
 </form>
+
+<app-footer></app-footer>

@@ -9,13 +9,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import { NavbarComponent } from './navbar/navbar.component';
 import {MatIconModule} from '@angular/material/icon';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
-  declarations: [		
+  declarations: [			
     AppComponent,
       HomeComponent,
-      NavbarComponent
+      NavbarComponent,
+      FooterComponent
    ],
   imports: [
     BrowserModule,

@@ -1,3 +1,53 @@
+.bg-dolar {
+    background-color: white;
+    border-radius: 15px;
+    width: 20%;
+    margin-top: 30px;
+    margin: auto;
+    position: relative;
+    top: 40px;
+    text-align: center;
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px,
+        rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+}
+.texto-dolarhoy {
+    padding-top: 10px;
+    font-size: 20px;
+    font-family: Montserrat;
+    font-weight: 700;
+}
+.break {
+    flex-basis: 100%;
+    height: 0;
+  }
+
+.flex-dolar {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.texto-dolarcompra{
+    font-size: 14px;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 30px;
+
+}
+.texto-dolarventa{
+    font-size: 14px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    padding-left: 25px;
+
+}
+
+.calc1-pos{
+    margin-top: 90px;
+}
+
 .input-paypal {
     width: 100%;
     height: 80px;
@@ -11,7 +61,8 @@
     font-family: Montserrat;
     font-size: 20px;
     font-weight: 800;
-    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px,
+        rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
 }
 .input-payooner {
     width: 100%;
@@ -26,7 +77,8 @@
     font-family: Montserrat;
     font-size: 20px;
     font-weight: 800;
-    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px,
+        rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
 }
 .input-usdt {
     width: 100%;
@@ -41,9 +93,26 @@
     font-family: Montserrat;
     font-size: 20px;
     font-weight: 800;
-    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px,
+        rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
 }
 
+.input-usdt1 {
+    width: 100%;
+    height: 80px;
+    border: none !important;
+    background-color: #f5f7fb;
+    border-radius: 15px;
+    background-image: url("../../assets/img/logo-usdt.png");
+    background-position: 2%;
+    background-repeat: no-repeat;
+    padding-left: 65px;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 800;
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px,
+        rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+}
 .input-ars {
     width: 100%;
     height: 80px;
@@ -55,54 +124,139 @@
     background-repeat: no-repeat;
     padding-left: 65px;
     font-family: Montserrat;
-    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px,
+        rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
     font-weight: 800;
     font-size: 20px;
 }
 
-.icon-flecha{
+.input-ars1 {
+    width: 100%;
+    height: 80px;
+    border: none !important;
+    background-color: #f5f7fb;
+    border-radius: 15px;
+    background-image: url("../../assets/img/arslogo.png");
+    background-position: 2%;
+    background-repeat: no-repeat;
+    padding-left: 65px;
+    font-family: Montserrat;
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px,
+        rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.input-wise {
+    width: 100%;
+    height: 80px;
+    border: none !important;
+    background-color: #f5f7fb;
+    border-radius: 15px;
+    background-image: url("../../assets/img/wise-logo.png");
+    background-position: 2%;
+    background-repeat: no-repeat;
+    padding-left: 65px;
+    font-family: Montserrat;
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px,
+        rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.input-wise1 {
+    width: 100%;
+    height: 80px;
+    border: none !important;
+    background-color: #f5f7fb;
+    border-radius: 15px;
+    background-image: url("../../assets/img/wise-logo.png");
+    background-position: 2%;
+    background-repeat: no-repeat;
+    padding-left: 65px;
+    font-family: Montserrat;
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px,
+        rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.input-skrill {
+    width: 100%;
+    height: 80px;
+    border: none !important;
+    background-color: #f5f7fb;
+    border-radius: 15px;
+    background-image: url("../../assets/img/skrill-logo.png");
+    background-position: 2%;
+    background-repeat: no-repeat;
+    padding-left: 65px;
+    font-family: Montserrat;
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px,
+        rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.input-skrill1 {
+    width: 100%;
+    height: 80px;
+    border: none !important;
+    background-color: #f5f7fb;
+    border-radius: 15px;
+    background-image: url("../../assets/img/skrill-logo.png");
+    background-position: 2%;
+    background-repeat: no-repeat;
+    padding-left: 65px;
+    font-family: Montserrat;
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px,
+        rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.icon-flecha {
     padding-top: 20px;
     font-size: 48px;
     left: 20px;
     position: relative;
 }
-.flex-input{
+.flex-input {
     display: flex;
     width: 100%;
     margin-top: 50px;
     flex-direction: row;
-    gap: 50px
-    ;
+    gap: 50px;
     justify-content: center;
 }
 
-.flex-select{
+.flex-select {
     display: flex;
     width: 100%;
     margin-top: 50px;
     flex-direction: row;
     justify-content: center;
-
-
 }
 
-.select-1{
+.select-1 {
     position: relative;
     right: 75px;
 }
-.select-2{
+.select-2 {
     position: relative;
     left: 75px;
 }
+.icon-flechaCelu{
+    display: none;
+}
 
+.img-exchange {
+    width: 50%;
+    margin-top: -5px;
+}
 
-  .img-exchange{
-      width: 50%;
-      margin-top: -5px;
-  }
-
-.comision-style{
-    margin-top: 100px;
+.comision-style {
+    margin-top: 75px;
     text-align: center;
     font-size: 18px;
     font-family: Montserrat;
@@ -110,7 +264,7 @@
     align-items: center;
 }
 
-.comision{
+.comision {
     text-align: center;
     width: 5%;
     font-weight: 900;
@@ -118,190 +272,303 @@
     font-size: 18px;
 }
 
-mat-form-field{
-    margin-top: 200px;
-    box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+mat-form-field {
+    box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px,
+        rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
     border: none !important;
     background-color: #f5f7fb;
- 
 }
 
-.texto-footer{
-    position: fixed; bottom: 0; width:100%;
+.texto-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
-
 
 //Destkop
 @media only screen and (max-width: 1366px) {
-    mat-form-field{
-        margin-top: 100px;
+    mat-form-field {
+        
     }
-}
-//Notebooks
-@media only screen and (max-width: 1200px) {
+    .bg-dolar{
+        width: 40%;
+    }
 }
 
-@media only screen and (max-width: 992px) {
-    mat-form-field{
-        margin-top: 150px;
+//Notebooks
+@media only screen and (max-width: 1200px) {
+    .bg-dolar{
+        width: 40%;
     }
-  .flex-select{
+
+}
+
+
+
+@media only screen and (max-width: 992px) {
+    mat-form-field {
+        
+    }
+    .flex-select {
         margin-top: 15px;
         flex-direction: column;
         justify-content: center;
     }
-    .flex-input{
+    .flex-input {
         flex-direction: column;
-        gap: 15px
-        ;
+        gap: 15px;
     }
-    .input-payooner{
+    .input-payooner {
         width: 80%;
         margin-left: 35px;
     }
-    .input-usdt{
+    .input-payooner1 {
         width: 80%;
         margin-left: 35px;
     }
-    .input-ars{
+    .input-usdt {
         width: 80%;
         margin-left: 35px;
     }
-    .input-paypal{
+    .input-usdt1{
         width: 80%;
         margin-left: 35px;
     }
-    .select-1{
+    .input-ars {
+        width: 80%;
+        margin-left: 35px;
+    }
+    .input-ars1 {
+        width: 80%;
+        margin-left: 35px;
+    }
+    .input-paypal {
+        width: 80%;
+        margin-left: 35px;
+    }
+    .input-paypal1 {
+        width: 80%;
+        margin-left: 35px;
+    }
+    .input-skrill {
+        width: 80%;
+        margin-left: 35px;
+    }
+    .input-skrill1 {
+        width: 80%;
+        margin-left: 35px;
+    }
+    .input-wise{
+        width: 80%;
+        margin-left: 35px;
+    }
+    .input-wise1{
+        width: 80%;
+        margin-left: 35px;
+    }
+    .select-1 {
         position: relative;
         width: 50%;
         left: 25%;
-
     }
-    .select-2{
+    .select-2 {
         position: relative;
         width: 70%;
         left: 15%;
         margin-top: 20px;
     }
-    .icon-flecha{
+    .icon-flecha {
         display: none;
     }
-    .comision-style{
+    .icon-flechaCelu{
+        margin: auto;
+        display: block;
+    }
+    .comision-style {
         margin-top: 50px;
         font-size: 20px;
     }
-    .comision{
+    .comision {
         width: 15%;
         font-size: 20px;
     }
 }
 //Tablets
 @media only screen and (max-width: 767px) {
-    mat-form-field{
-        margin-top: 40px;
+    mat-form-field {
+        margin-top: 20px;
     }
-  .flex-select{
+    .bg-dolar{
+        width: 60%;
+    }
+    .flex-select {
         margin-top: 15px;
         flex-direction: column;
         justify-content: center;
     }
-    .flex-input{
+    .flex-input {
         flex-direction: column;
-        gap: 15px
-        ;
+        gap: 15px;
     }
     .input-payooner{
-        width: 80%;
-        margin-left: 25px;
+        width: 70%;
+        margin-left: 55px;
+    }
+    .input-payooner1{
+        width: 70%;
+        margin-left: 55px;
     }
     .input-usdt{
-        width: 80%;
-        margin-left: 25px;
+        width: 70%;
+        margin-left: 55px;
     }
-    .input-ars{
-        width: 80%;
-        margin-left: 25px;
+    .input-usdt1{
+        width: 70%;
+        margin-left: 55px;
     }
-    .input-paypal{
-        width: 80%;
-        margin-left: 25px;
+    .input-ars {
+        width: 70%;
+        margin-left: 55px;
     }
-    .select-1{
+    .input-ars1 {
+        width: 70%;
+        margin-left: 55px;
+    }
+    .input-paypal {
+        width: 70%;
+        margin-left: 55px;
+    }
+    .input-paypal1 {
+        width: 70%;
+        margin-left: 55px;
+    }
+    .input-skrill {
+        width: 70%;
+        margin-left: 55px;
+    }
+    .input-skrill1 {
+        width: 70%;
+        margin-left: 55px;
+    }
+    .input-wise{
+        width: 70%;
+        margin-left: 55px;
+    }
+    .input-wise1{
+        width: 70%;
+        margin-left: 55px;
+    }
+    .select-1 {
         position: relative;
         width: 50%;
         left: 25%;
-
     }
-    .select-2{
+    .select-2 {
         position: relative;
         width: 70%;
         left: 15%;
         margin-top: 20px;
     }
-    .icon-flecha{
+    .icon-flecha {
         display: none;
     }
-    .comision-style{
+    
+    .comision-style {
         margin-top: 50px;
         font-size: 16px;
     }
-    .comision{
+    .comision {
         width: 15%;
         font-size: 16px;
     }
-
 }
 
-
 //Celus
-@media only screen and (min-width:0px) and (max-width: 480px) {
-    .select-1{
+@media only screen and (min-width: 0px) and (max-width: 480px) {
+    .select-1 {
         position: relative;
         width: 50%;
         left: 25%;
-
     }
-    .select-2{
+    .calc1-pos{
+        margin-top: 50px;
+    }
+    .select-2 {
         position: relative;
         width: 70%;
         left: 15%;
         margin-top: 20px;
     }
 
-    .flex-select{
+    .flex-select {
         margin-top: 15px;
         flex-direction: column;
         justify-content: center;
     }
-    .flex-input{
+    .flex-input {
         flex-direction: column;
-        gap: 15px
-        ;
-    }
-    .input-payooner{
-        width: 70%;
-        margin-left: 25px;
+        gap: 15px;
     }
     .input-usdt{
         width: 70%;
         margin-left: 25px;
     }
-    .input-ars{
+    .input-usdt1{
         width: 70%;
         margin-left: 25px;
     }
-    .input-paypal{
+    .input-ars {
         width: 70%;
         margin-left: 25px;
     }
-    .icon-flecha{
+    .input-ars1 {
+        width: 70%;
+        margin-left: 25px;
+    }
+    .input-paypal {
+        width: 70%;
+        margin-left: 25px;
+    }
+    .input-paypal1 {
+        width: 70%;
+        margin-left: 25px;
+    }
+    .input-skrill {
+        width: 70%;
+        margin-left: 25px;
+    }
+    .input-skrill1 {
+        width: 70%;
+        margin-left: 25px;
+    }
+    .input-wise{
+        width: 70%;
+        margin-left: 25px;
+    }
+    .input-wise1{
+        width: 70%;
+        margin-left: 25px;
+    }
+    .input-payooner{
+        width: 70%;
+        margin-left: 25px;
+    }
+    .input-payooner1{
+        width: 70%;
+        margin-left: 25px;
+    }
+    .icon-flecha {
         display: none;
     }
-    .comision-style{
+    .icon-flechaCelu{
+        margin: auto;
+        display: block;
+    }
+    .comision-style {
         margin-top: 50px;
         font-size: 14px;
     }
-    .comision{
+    .comision {
         width: 15%;
         font-size: 14px;
     }
